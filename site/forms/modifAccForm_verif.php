@@ -26,6 +26,7 @@ if ($all_ok) {
 
     ?>
     <form action="page.php?tab=3" method="post">
+        <input type="text" name="user_id" id="hidden" value="<?php echo $donnees['user_id']; ?>">
         <label class="label">Nom de famille:</label>
         <input class="login" type="text" name="last" id="last" value="<?php if($last_ok) {echo $_POST['last'];}?>" placeholder=" <?php if (!$last_ok) {echo "Erreur";}?>">
 

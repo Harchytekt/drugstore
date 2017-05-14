@@ -1,0 +1,132 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+body {
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* HEADER - NAV */
+
+nav {
+    position: fixed;
+        top: 0;
+        left: 20%;
+    width: 60%;
+    z-index: 10;
+}
+nav .tab {
+    display: inline-block;
+    cursor: pointer;
+}
+nav .tab.logIn, .tab.signUp {
+    width: 30%;
+}
+nav .tab.list {
+    width: 40%;
+}
+nav .navItem {
+    background-color: #FCF1DB;
+    background-color: rgba(255, 241, 215, 0.7);
+    padding: 1em 0px;
+}
+nav .navItem:hover {
+    background-color: #F5D6B1;
+    background-color: rgba(255, 208, 157, 0.7);
+}
+nav a {
+    text-decoration: none;
+}
+nav p {
+    display: block;
+    color: #2AB77E;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+}
+
+/* BODY */
+
+h1 {
+    font-weight: lighter;
+    color: #FFF;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 45px;
+    position: relative;
+        top: 15vh;
+        left: auto;
+    text-align: center;
+    z-index: 1;
+}
+
+/* MAIN */
+
+main {
+    position: relative;
+        top: 20vh;
+        left: 0;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+#presentation {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	padding: 40px;
+    background-color: #FFF;
+	background-color: rgba(255, 255, 255, 0.5);
+    color: #006096;
+    border-radius: 60px 10px;
+    -webkit-backdrop-filter: brightness(1) blur(2px);
+}
+.presentation h3 {
+    color: #FFF;
+    font-weight: normal;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+        top: 35px;
+        left: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 0 50%;
+    border-radius: 2.5px 2.5px 0 0;
+    transform: translateX(-50%);
+    width: 78%;
+    border-top: 2.5px solid #2AB77E;
+    border-left: 2.5px solid #2AB77E;
+    border-right: 2.5px solid #2AB77E;
+    position: fixed;
+        bottom: 0;
+        left: 0;
+    /* Only for Safari */
+    -webkit-backdrop-filter: blur(6px);
+}
+footer #centerFooter {
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    nav {
+        left: 10%;
+        width: 80%;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    main {
+        top: 18vh;
+    }
+}

@@ -1,0 +1,17 @@
+main {
+    top: 110px;
+}
+h1 {
+    position: relative;
+    color: #FF8A3F;
+}
+.changingData {
+    display: block;
+}
+form input.form, form textarea.form {
+    width: 40%;
+}
+input, textarea {
+    display: block;
+    margin: 0 auto;
+}

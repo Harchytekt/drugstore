@@ -1,0 +1,39 @@
+form input.login {
+    padding: 8px;
+    display: block;
+    width: 20%;
+    margin-bottom: 1%;
+    background-color: rgba(242, 242, 242, 0.74);
+}
+form input[type=submit] {
+    color: #0056D6;
+    background-color: #E9E9E9;
+    padding: 8px;
+    display: block;
+    border: 1px solid #808080;
+    width: 10%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+}
+form input[type=submit]:hover {
+    border: none;
+    background-color: #0056D6;
+    color: #E9E9E9;
+}
+form input[type=submit]:active {
+    border: none;
+    background-color: #0089D6;
+    color: #E9E9E9;
+}
+form input[type=submit]#disabled {
+    border: 1px solid #808080;
+    color: red;
+    background-color: #C0C0C0;
+}
+
+@media only screen and (max-width: 1024px) {
+    form input[type=submit] {
+        width: auto;
+    }
+}

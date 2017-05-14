@@ -1,0 +1,304 @@
+html, body {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #F5F1E4;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* NAV */
+
+nav {
+    background-color: #F5F1E4;
+    left: 0;
+    height: auto;
+    width: 100%;
+}
+nav div {
+    width: 17%;
+    cursor: pointer;
+}
+nav div.tab:hover {
+    border-bottom: 5px solid #FFD805;
+    border-radius: 0 0 5px 5px;
+}
+nav div.users {
+    background-color: #2AB77E;
+}
+nav div.reserves {
+    background-color: #DE5833;
+}
+nav div.medicines {
+    background-color: #0089D6;
+}
+nav div.account {
+    background-color: #3A3A3A;
+}
+nav div#current {
+    border-bottom: 7px solid #E5B329;
+    border-radius: 0 0 7px 7px;
+}
+nav div#logout {
+    position: absolute;
+        top: auto;
+        right: 0px;
+    background-color: #B51B01;
+}
+nav a {
+    text-decoration: none;
+}
+nav p {
+    color: white;
+    margin: 1em 0px;
+}
+
+/* MAIN */
+
+main {
+    position: relative;
+        top: 240px;
+        left: auto;
+    z-index: 0;
+    /*padding-bottom: 10%;*/
+}
+#center {
+    width: 80%;
+    margin: 0 auto;
+}
+h1 {
+    color: #3A3A3A;
+    text-shadow: 2px 2px 4px #808080;
+    position: static;
+}
+.left, .right {
+    width: 50%;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.sendmail {
+    text-decoration: none;
+    color: #0573FF;
+    cursor: pointer;
+}
+form input.mail, form input[type=submit].mail {
+    display: block;
+    margin: 0 auto;
+}
+form textarea.mail {
+    background-color: #EFEFEF;
+    padding: 8px;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+}
+form textarea.mail:hover, form textarea.mail:focus {
+    /* Override the default border on focus. */
+    outline: none !important;
+}
+
+    /* table */
+
+table {
+    border-spacing: 0;
+    text-align: center;
+    border-collapse: collapse;
+}
+.first {
+    color:white;
+}
+#usersTable .first {
+    background-color: #2AB77E;
+}
+#reservesTable .first {
+    background-color: #DE5833;
+}
+#medicinesTable .first {
+    background-color: #0089D6;
+}
+#accountTable .first {
+    background-color: #3A3A3A;
+}
+tr:nth-child(even) {
+    background-color: #E9E9E9
+}
+th, td {
+    padding: 8px;
+    width: 25%;
+}
+th.choose, td.choose {
+    width: 3%;
+}
+.special {
+    text-decoration: underline;
+}
+div .line {
+    cursor: help;
+}
+.med {
+	width: 20%;
+	margin: 0 auto;
+	position: absolute;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+}
+
+    /* popup */
+
+#popup {
+    display: none;
+    position: absolute;
+        top: -5vh;
+        left: 0;
+        right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    background-color: #FFF;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0px 10px 0px 20px;
+    width: 60%;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
+}
+#popup img {
+    float: right;
+}
+#popup img.clickableImg {
+    cursor: pointer;
+}
+#contraindicationsList {
+    padding: 0 20px;
+}
+#dose {
+    font-size: 0.9rem;
+}
+
+    /* buttons */
+
+.button, .btn, input[type=submit] {
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.button p, .btn p {
+    padding: 5px;
+    margin: 0;
+}
+.add, .act, .med {
+    background-color: #6FB76F;
+}
+.mod, .rei {
+    background-color: #E7BE55;
+}
+.rem, .des {
+    background-color: #E75656;
+}
+.changingData {
+    display: none;
+    margin: 0 auto;
+}
+.changingData.wid {
+    width: 40%;
+    margin-top: 20px;
+}
+.changeData, .changePwd, .deactivateAccount {
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    color: #FFF;
+}
+.changeData {
+    background-color: #0089D6;
+}
+.saveChanges, .cancelChanges {
+    display: inline-block;
+}
+.cancelChanges {
+    background-color: #DE5833;
+    color: #FFF;
+    width: 20%;
+}
+.changePwd {
+    background-color: #3A3A3A;
+}
+.deactivateAccount {
+    margin-top: 40px;
+    background-color: #B51B01;
+}
+
+    /* form */
+
+form {
+    display: block;
+    text-align: center;
+}
+form input.login, form input.form, form textarea.form {
+    background-color: #E9E9E9;
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #808080;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 1.1em;
+    transition: background-color 1.5s;
+}
+form input.login:hover, form input.form:hover, form textarea.form:hover, form input.login:focus, form input.form:focus, form textarea.form:focus {
+    /* Override the default border on focus. */
+    outline: none !important;
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    text-shadow: 2px 1px 10px #000;
+}
+form input[type=submit] {
+    padding:5px 15px;
+    margin: 0;
+    color: #FFF;
+    background-color: #2AB77E;
+    border: 0 none;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+input[type=submit]#disabled {
+    color: #2AB77E;
+    background-color: #C0C0C0;
+    cursor: pointer;
+}
+#reservesBar {
+    border-top: 5px solid #DE5833;
+}
+
+/** FOOTER */
+
+.contact.foot {
+    position: fixed;
+        bottom: 15px;
+        right: 10px;
+}
+.contact, .contact a {
+    text-decoration: none;
+    color: #0573FF;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    main {
+        top: 160px;
+    }
+    #center {
+        width: 98%;
+    }
+    /*.med {
+    	bottom: 50px;
+    }*/
+}

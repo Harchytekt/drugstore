@@ -19,7 +19,7 @@
     <img src="../img/close.svg" height="32" width="32" class="clickableImg">
 </div>
 <img src="../img/meds/<?php Print($med_id); ?>.png" alt="" id="med" height="128" width="128">
-<h2><?php Print($donnees['name']); ?> <span id="dose">(<?php Print($donnees['dosage']); ?>)</span></h2>
+<h2 id="medName"><?php Print($donnees['name']); ?> <span id="dose">(<?php Print($donnees['dosage']); ?>)</span></h2>
 <div id="contraindicationsList"><?php Print($donnees['contraindications']); ?></div>
 <a href="<?php Print($donnees['noticeLink']); ?>">
     <img src="../img/info.svg" height="50" width="50" class="clickableImg" title="Télécharger la notice">

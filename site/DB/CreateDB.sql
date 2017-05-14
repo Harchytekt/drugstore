@@ -19,7 +19,7 @@ ENGINE = INNODB;
 CREATE TABLE IF NOT EXISTS Medicines (
     medicine_id INT(5) NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    dosage VARCHAR(15) NOT NULL,
+    dosage VARCHAR(64) NOT NULL,
     contraindications VARCHAR(500) NOT NULL,
     noticeLink VARCHAR(100) NOT NULL,
     CONSTRAINT pk_Medicines PRIMARY KEY(medicine_id)

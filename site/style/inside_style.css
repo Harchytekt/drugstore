@@ -81,6 +81,11 @@ h1 {
 .clear {
     clear: both;
 }
+.updateData {
+    text-decoration: none;
+    color: #2AB77E;
+    cursor: pointer;
+}
 .sendmail {
     text-decoration: none;
     color: #0573FF;
@@ -174,8 +179,14 @@ div .line {
 #popup img.clickableImg {
     cursor: pointer;
 }
+#popup form {
+    padding: 40px 0;
+}
 #contraindicationsList {
     padding: 0 20px;
+}
+#medName {
+    font-size: 1.4rem;
 }
 #dose {
     font-size: 0.9rem;
@@ -218,13 +229,15 @@ div .line {
 .changeData {
     background-color: #0089D6;
 }
-.saveChanges, .cancelChanges {
+.saveChanges, .updateChanges, .cancelChanges {
     display: inline-block;
+}
+.updateChanges, .cancelChanges {
+    color: #FFF;
+    width: 20%;
 }
 .cancelChanges {
     background-color: #DE5833;
-    color: #FFF;
-    width: 20%;
 }
 .changePwd {
     background-color: #3A3A3A;
@@ -273,6 +286,9 @@ input[type=submit]#disabled {
     color: #2AB77E;
     background-color: #C0C0C0;
     cursor: pointer;
+}
+form input#hidden {
+    display: none;
 }
 #reservesBar {
     border-top: 5px solid #DE5833;

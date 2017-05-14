@@ -26,7 +26,9 @@
                 <?php echo $donnees['user_id']; ?>
             </td>
             <td>
-                <?php echo $donnees['username']; ?>
+                <div class="updateData" id="upd<?php echo $donnees['user_id']; ?>" title="Modifier les données">
+                    <?php echo $donnees['username']; ?>
+                </div>
             </td>
             <td>
                 <?php

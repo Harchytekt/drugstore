@@ -124,17 +124,40 @@
                 }
             });
 
+            $('.updateData').click(function() {
+                var itemValue = $(this).attr('id').substr(3);
+
+                if (itemValue != null) {
+                    if (itemValue == 1) {
+                        window.location = "page.php?tab=3";
+                    } else {
+                        $.post("../include/updateDataPopUp.php", {updateID: itemValue});
+                        $('#popup').load('../include/updateDataPopUp.php');
+                        $("#popup").css("display", "block");
+                    }
+                }
+            });
             $('.sendmail').click(function() {
                 var itemValue = $(this).attr('id').substr(3);
 
                 if (itemValue != null) {
-                    $.post("../include/mailPopUp.php", {mail: itemValue});
                 } else {
                     $.post("../include/mailPopUp.php", {mail: '<?php echo $_SESSION['admin_mail']; ?>'});
                 }
                 $('#popup').load('../include/mailPopUp.php');
                 $("#popup").css("display", "block");
             });
+
+            function changeData() {
+                $('input').prop('disabled', false);
+                $('.changeData').css('display', 'none');
+                $('.changingData').css('display', 'block');
+            }
+            function cancel() {
+                $('input').prop('disabled', true);
+                $('.changeData').css('display', 'block');
+                $('.changingData').css('display', 'none');
+            }
 
             window.onpageshow = function(event) {
                 if (event.persisted) { window.location.reload(); }

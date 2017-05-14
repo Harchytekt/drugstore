@@ -24,7 +24,7 @@
 
         if ($mail_ok) {
             include('../connexion/connexion.php');
-            $str = "SELECT user_id FROM Users WHERE user_id != $uid AND mail = '{$_POST['mail']}';";
+            $str = "SELECT user_id FROM Users WHERE user_id != {$_POST['user_id']} AND mail = '{$_POST['mail']}';";
             $reponse = $bd->query($str);
             $donnees = $reponse->fetch();
             if ($donnees['user_id'] == null) {

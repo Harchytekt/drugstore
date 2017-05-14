@@ -34,16 +34,7 @@
     }
     document.getElementsByClassName('changePwd')[0].addEventListener("click", changePassword);
 
-    function changeData() {
-        $('input').prop('disabled', false);
-        $('.changeData').css('display', 'none');
-        $('.changingData').css('display', 'block');
-    }
-    function cancel() {
-        $('input').prop('disabled', true);
-        $('.changeData').css('display', 'block');
-        $('.changingData').css('display', 'none');
-    }
+    
     function changePassword() {
         window.location = 'chgPwd.php';
     }

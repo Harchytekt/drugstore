@@ -32,7 +32,8 @@
         if ($name_ok && $_SESSION['case'] == 'med') {
             include('../connexion/connexion.php');
             $str = "SELECT medicine_id FROM Medicines WHERE name = '{$_POST['name']}';";
-            $reponse = $bd->query($str);
+            $reponse = $bd->prepare($str);
+            $reponse->execute();
             $donnees = $reponse->fetch();
             if ($donnees['medicine_id'] == null) {
                 $new_name = true;

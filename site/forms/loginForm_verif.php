@@ -8,7 +8,8 @@ if ($all_ok) {
     include '../connexion/connexion.php';
 
     $str = "SELECT user_id, active FROM Users WHERE mail <=> '$mail' AND password <=> '$pwd';";
-    $reponse = $bd->query($str);
+    $reponse = $bd->prepare($str);
+    $reponse->execute();
     $donnees = $reponse->fetch();
     if ($donnees['user_id'] == null OR $donnees['active'] == 0) {
         $target = "connexion/loginPage.php?state=0";

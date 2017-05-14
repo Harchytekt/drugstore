@@ -6,7 +6,8 @@
     }
     include '../connexion/connexion.php';
     $uid      = $_SESSION['updateID'];
-    $reponse  = $bd->query("SELECT * FROM Users WHERE user_id = $uid;");
+    $reponse  = $bd->prepare("SELECT * FROM Users WHERE user_id = $uid;");
+    $reponse->execute();
     $donnees  = $reponse->fetch();
     $username = $donnees['username'];
 ?>

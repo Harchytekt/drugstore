@@ -24,7 +24,8 @@ if ($all_ok) {
         // set the PDO error mode to exception
         $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $str = "SELECT medicine_id FROM Medicines WHERE name = '{$_POST['name']}';";
-        $reponse = $bd->query($str);
+        $reponse = $bd->prepare($str);
+        $reponse->execute();
         $donnees = $reponse->fetch();
     } catch(PDOException $e) {
         //echo $str . "<br>" . $e->getMessage();

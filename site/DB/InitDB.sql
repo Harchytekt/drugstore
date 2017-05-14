@@ -4,7 +4,7 @@ INSERT INTO Users (lastname, firstname, username, password, mail)
 VALUES
 ('Ducobu', 'Alexandre', 'admin', SHA2('+%#5Test1¨*§', 512), 'admin@drugstore.be'),
 ('Ducobu', 'Alexandre', 'alDuc', SHA2('+%#5Test1¨*§', 512), 'alduc@gmail.com'),
-('Tata', 'Titi', 'Toto', SHA2('+%#5tutu3¨*§', 512), 'toto@gmail.com');
+('Tata', 'Titi', 'Toto', SHA2('+%#5Tutu3¨*§', 512), 'toto@gmail.com');
 
 INSERT INTO Medicines (name, dosage, contraindications, noticeLink)
 VALUES

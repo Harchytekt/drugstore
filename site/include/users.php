@@ -1,5 +1,6 @@
 <?php
-    $reponse = $bd->query('SELECT username, user_id, password, mail, active FROM Users ORDER BY user_id;');
+    $reponse = $bd->prepare('SELECT username, user_id, password, mail, active FROM Users ORDER BY user_id;');
+    $reponse->execute();
 ?>
 
 <section id="cslide-slides" class="cslide-slides-master clearfix">

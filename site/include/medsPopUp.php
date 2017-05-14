@@ -4,14 +4,12 @@
     if (!empty($_POST['med_id'])) {
         $_SESSION['med_id'] = htmlentities(addslashes($_POST['med_id']));
     }
-    if (!empty($_SESSION['med_id'])) {
-        $med_id = $_SESSION['med_id'];
-    }
 
     include '../connexion/connexion.php';
 
-    $str = "SELECT name, medicine_id, dosage, contraindications, noticeLink FROM Medicines WHERE medicine_id <=> $med_id;";
-    $reponse = $bd->query($str);
+    $str = "SELECT name, medicine_id, dosage, contraindications, noticeLink FROM Medicines WHERE medicine_id <=> {$_SESSION['med_id']};";
+    $reponse = $bd->prepare($str);
+    $reponse->execute();
     $donnees = $reponse->fetch();
 ?>
 

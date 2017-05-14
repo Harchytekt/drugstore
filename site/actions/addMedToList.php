@@ -7,7 +7,8 @@
             // set the PDO error mode to exception
             $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $str = "SELECT list_id FROM Lists WHERE user_id = {$_POST['uid']} AND medicine_id = {$_POST['mid']};";
-            $reponse = $bd->query($str);
+            $reponse = $bd->prepare($str);
+            $reponse->execute();
             $donnees = $reponse->fetch();
             if ($_POST['case'] == "add" && $donnees['list_id'] == null) {
                 $reponse->closeCursor(); // Termine le traitement de la requête

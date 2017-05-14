@@ -43,7 +43,8 @@
         if ($uname_ok) {
             include('../connexion/connexion.php');
             $str = "SELECT user_id FROM Users WHERE username = '{$_POST['uname']}';";
-            $reponse = $bd->query($str);
+            $reponse = $bd->prepare($str);
+            $reponse->execute();
             $donnees = $reponse->fetch();
             if ($donnees['user_id'] == null) {
                 $new_uname = true;
@@ -54,7 +55,8 @@
         if ($mail_ok) {
             include('../connexion/connexion.php');
             $str = "SELECT user_id FROM Users WHERE mail = '{$_POST['mail']}';";
-            $reponse = $bd->query($str);
+            $reponse = $bd->prepare($str);
+            $reponse->execute();
             $donnees = $reponse->fetch();
             if ($donnees['user_id'] == null) {
                 $new_mail = true;

@@ -23,7 +23,8 @@
                 // set the PDO error mode to exception
                 $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $str = "SELECT user_id FROM Users WHERE user_id = {$_SESSION['current_user_id']} AND password <=> '$currentPWD';";
-                $reponse = $bd->query($str);
+                $reponse = $bd->prepare($str);
+                $reponse->execute();
                 $donnees = $reponse->fetch();
 
                 $currentPWD_ok = $donnees['user_id'] != null;

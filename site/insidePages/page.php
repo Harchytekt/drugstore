@@ -7,7 +7,8 @@
     } else {
         $current_id = $_SESSION['current_user_id'];
         include '../connexion/connexion.php';
-        $reponse = $bd->query("SELECT mail FROM Users WHERE user_id = 1;");
+        $reponse = $bd->prepare("SELECT mail FROM Users WHERE user_id = 1;");
+        $reponse->execute();
         $donnees = $reponse->fetch();
         $_SESSION['admin_mail'] = $donnees['mail'];
         $reponse->closeCursor(); // Termine le traitement de la requête
@@ -141,6 +142,7 @@
                 var itemValue = $(this).attr('id').substr(3);
 
                 if (itemValue != null) {
+                    $.post("../include/mailPopUp.php", {mail: itemValue});
                 } else {
                     $.post("../include/mailPopUp.php", {mail: '<?php echo $_SESSION['admin_mail']; ?>'});
                 }

@@ -2,7 +2,8 @@
     if (!isset($current_id)) {
         $current_id = 0;
     }
-    $reponse = $bd->query('SELECT name, medicine_id, dosage FROM Medicines ORDER BY name;');
+    $reponse = $bd->prepare('SELECT name, medicine_id, dosage FROM Medicines ORDER BY name;');
+    $reponse->execute();
 ?>
 
 <section id="cslide-slides" class="cslide-slides-master clearfix">
@@ -77,6 +78,8 @@
         <span class="cslide-next">Suivant</span>
     </div>
 </section>
-<div class="med button" id="med0">
-    <p>Ajouter un médicament</p>
-</div>
+<?php if ($current_id == 1) { ?>
+    <div class="med button" id="med0">
+        <p>Ajouter un médicament</p>
+    </div>
+<?php } ?>

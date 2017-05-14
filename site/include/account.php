@@ -1,5 +1,6 @@
 <?php
-    $reponse  = $bd->query("SELECT * FROM Users WHERE user_id = {$_SESSION['current_user_id']};");
+    $reponse  = $bd->prepare("SELECT * FROM Users WHERE user_id = {$_SESSION['current_user_id']};");
+    $reponse->execute();
     $donnees  = $reponse->fetch();
     $username = $donnees['username'];
     $uid      = $donnees['user_id'];
@@ -34,7 +35,7 @@
     }
     document.getElementsByClassName('changePwd')[0].addEventListener("click", changePassword);
 
-    
+
     function changePassword() {
         window.location = 'chgPwd.php';
     }

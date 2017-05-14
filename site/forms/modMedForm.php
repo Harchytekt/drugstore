@@ -1,6 +1,7 @@
 <?php
     include '../connexion/connexion.php';
-    $reponse  = $bd->query("SELECT * FROM Medicines WHERE medicine_id = {$_SESSION['medicine_id']};");
+    $reponse  = $bd->prepare("SELECT * FROM Medicines WHERE medicine_id = {$_SESSION['medicine_id']};");
+    $reponse->execute();
     $donnees  = $reponse->fetch();
 ?>
 

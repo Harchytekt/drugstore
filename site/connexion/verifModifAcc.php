@@ -25,7 +25,8 @@
         if ($mail_ok) {
             include('../connexion/connexion.php');
             $str = "SELECT user_id FROM Users WHERE user_id != {$_POST['user_id']} AND mail = '{$_POST['mail']}';";
-            $reponse = $bd->query($str);
+            $reponse = $bd->prepare($str);
+            $reponse->execute();
             $donnees = $reponse->fetch();
             if ($donnees['user_id'] == null) {
                 $new_mail = true;

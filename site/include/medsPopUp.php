@@ -16,7 +16,7 @@
 <div id="close">
     <img src="../img/close.svg" height="32" width="32" class="clickableImg">
 </div>
-<img src="../img/meds/<?php Print($med_id); ?>.png" alt="" id="med" height="128" width="128">
+<img src="../img/meds/<?php Print($donnees['medicine_id']); ?>.png" alt="" id="med" height="128" width="128">
 <h2 id="medName"><?php Print($donnees['name']); ?> <span id="dose">(<?php Print($donnees['dosage']); ?>)</span></h2>
 <div id="contraindicationsList"><?php Print($donnees['contraindications']); ?></div>
 <a href="<?php Print($donnees['noticeLink']); ?>">

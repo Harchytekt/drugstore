@@ -1,0 +1,227 @@
+\section{Site}
+\label{sec:site}
+
+
+\subsection{Arborescence}
+\label{sec:arborescence}
+
+Le site a été divisé en neuf dossiers pour plus de clarté.
+
+\begin{itemize}
+
+    \item[$\bullet$] Trois d’entre-eux ne sont pas liés au PHP:
+    \begin{itemize}
+    
+         \item \textbf{img :} contient toutes les images du site.
+         
+         \item \textbf{js :} contient les différents scripts en JavaScript ainsi que jQuery.
+         
+         \item \textbf{style :} contient les différents fichiers contenant le CSS du site.
+         
+    \end{itemize}
+    
+    \item[$\bullet$] Ensuite, viennent les six autres qui contiennent le PHP:
+    \begin{itemize}
+    
+         \item \textbf{actions :} contient les scripts php liés aux actions telles que la\\ (dés)activation d’un compte, l’ajout d’un médicament ainsi que la ré-initialisation d’un mot de passe.
+         
+         \item \textbf{connexion :} contient les scripts php liés à la connexion à la base de données ainsi que la (dé)connexion au site.
+         
+         \item \textbf{DB :} contient les scripts MySQL qui créent et initialisent la base de données.
+         
+         \item \textbf{forms :} contient les différents formulaires (avec leur version de vérification) tels que celui de l’ajout/modification d’un médicament, de\\ connexion, etc.
+         
+         \item \textbf{include :} contient les scripts php formant une partie des pages comme le pied de page et les différentes tables de la base de données.
+         
+         \item \textbf{insidePages :} les pages internes du site comme la page principale, celle de changement de mot de passe, etc.
+         
+    \end{itemize}
+    
+    \item[$\bullet$] Pour finir, l’index et la page d’erreur de connexion à la base de données se trouvent à la racine du site.
+
+\end{itemize}
+
+\newpage
+
+
+\subsection{Arborescence détaillée}
+\label{sec:arb-details}
+
+Voici maintenant chaque dossier détaillé.
+
+
+\subsubsection{Dossiers non liés au PHP}
+\label{sec:folder-no-php}
+
+Le dossier \textit{js} contient trois fichiers.\\
+
+Le premier, \textbf{\textit{jquery-3.1.1.min.js}}, contient toutes les fonctions de jQuery.\\
+
+Le second, \textbf{\textit{jquery.cslide.js}}, est une librairie permettant d’insérer facilement un slider \footnote{\url{http://callmenick.com/post/responsive-content-slider}}.\\
+Il est utilisé pour afficher le contenu des tables 5 par 5 grâce à l’utilisation de boutons \guillemotleft \ Suivant \guillemotright \ et \guillemotleft \ Précédent \guillemotright.\\
+
+Le troisième et dernier, \textbf{\textit{script.js}},contient trois fonctions:
+\begin{enumerate}
+
+    \item hideUsers(): qui cache l'onglet \textit{Utilisateurs} lorsqu'un utilisateur autre que l'administrateur est connecté.
+    
+    \item setCurrentTab(): qui sélectionne l'onglet courant.
+    
+    \item updateFooterBg(): qui change la couleur de fond du footer sur les autres navigateurs que Safari, qui permet d'avoir un fond flouté.
+    
+\end{enumerate}
+
+
+\subsubsection{Dossiers PHP}
+\label{sec:folder-php}
+
+Le dossier \textbf{actions} est constitué de quatre fichiers PHP.
+
+\begin{itemize}
+
+    \item \textbf{\textit{activateUser.php}}, qui permet de désactiver le compte d’un utilisateur ou de le réactiver.\\
+    Tous les utilisateurs, à l’exception de l’administrateur, peuvent désactiver leur compte.\\
+    L’administrateur, lui, a le droit d’activer ou de bannir \textit{(désactiver)} le compte de n’importe quel utilisateur sauf le sien.
+    
+    \item \textbf{\textit{addMedToList.php}}: ce fichier reçoit donc les données d’un nouveau médicament qu’il ajoute à la base de données.
+    
+    \item \textbf{\textit{changeDBData.php}}: il a un fonctionnement proche du précédent, sauf qu’il modifie les données de l’utilisateur (nom de famille, prénom et adresse mail).
+    
+    \item \textbf{\textit{reinitPWD.php}}: appelé par l’administrateur, ce fichier réinitialise le mot de passe de l’utilisateur sélectionné en lui donnant une valeur par défaut \textit{(EpcCM98)}.
+
+\end{itemize}
+
+\newpage
+
+Le dossier \textbf{connexion} en possède douze.
+
+\begin{itemize}
+
+    \item \textbf{\textit{connexion.php}} contient le script de connexion à la base de données.
+    
+    \item \textbf{\textit{dbInfos.php}} contient les données de connexion à la base de données: nom d’hôte, nom de la base, nom d’utilisateur, mot de passe et numéro de port.
+    
+    \item \textbf{\textit{login.php}} est le script appelé pour vérifier le login lors d’une tentative de connexion au site.
+    
+    \item \textbf{\textit{loginPage.php}}: c’est la page de connexion au site. C’est elle qui appelle le script précédent.
+    
+    \item \textbf{\textit{logout.php}}: comme son nom l’indique, il est utilisé pour déconnecter l’utilisateur du site.
+    
+    \item \textbf{\textit{signUp.php}}: son fonctionnement proche de celui de login.php lui permet d’enregistrer un nouvel utilisateur.
+    
+    \item \textbf{\textit{signuPage.php}}: c’est la page d’inscription au site. C’est elle qui appelle le script précédent.
+    
+    \item Les cinq suivant servent à vérifier les données des formulaires à l’aide de regex\footnote{\href{https://fr.wikipedia.org/wiki/Expression\_rationnelle}{Expression régulière (en anglais: \textbf{Reg}ular \textbf{ex}pression)}}.\\
+    Il est aussi parfois nécessaire de vérifier des données dans la base de données comme le nom d’un médicament lors de son ajout afin de ne pas avoir de doublons.\\
+
+\end{itemize}
+
+Le dossier \textbf{BD} est le plus simple, car il ne contient que deux fichiers SQL:
+
+\begin{itemize}
+
+    \item \textbf{\textit{CreateDB.sql}} crée la base de données ainsi que les trois tables la composant.
+    
+    \item \textbf{\textit{InitDB.sql}} initialise la base de données en ajoutant trois utilisateurs dont l’administrateur; ajoute sept médicaments différents; et remplit la réserve des deux utilisateurs créés.
+
+\end{itemize}
+
+\newpage
+
+Le dossier \textbf{forms} contient tous les formulaires du site.\\
+
+En résumé, chaque formulaire existe en deux formes:
+\begin{itemize}
+    
+    \item[$\bullet$] Le formulaire vierge qui, une fois soumis, est vérifié par l’un des scripts de vérification du dossier connexion.
+    
+    \item[$\bullet$] Le formulaire de vérification qui, si les données sont acceptées, appelle le script adéquat.\\
+    Dans le cas contraire, le formulaire est affiché avec les bonnes données et/ou les messages d’erreurs pour chaque champ.\\
+    
+\end{itemize}
+
+Le dossier \textbf{include} contient 8 fichiers.
+
+\begin{itemize}
+    
+    \item \textbf{\textit{footer.php}} contient le footer avec ou sans le moyen de contacter l’administrateur selon que l’on soit connecté ou non et que l’on soit l’administrateur ou non.
+    
+    \item Les deux fichiers de barre de navigation:
+    \begin{itemize}
+        
+        \item \textbf{\textit{navBarConnect.php}} permet d’afficher la liste des médicaments et les liens de connexion et d’inscription au site.
+        
+        \item \textbf{\textit{navBarReserve.php}}: affichée lorsque l’utilisateur est connecté, elle permet de naviguer entre les différentes tables de la base.
+        
+    \end{itemize}
+    
+    \item \textbf{\textit{medsPopUp.php}} permet d’afficher les données des médicaments dans un popup.
+    
+    \item \textbf{\textit{account.php}} affiche les données de l’utilisateur et lui permet de les changer ou de supprimer son compte.
+    
+    \item Les trois derniers permettent d’afficher les données contenues dans les différentes tables d’après l’utilisateur connecté.
+    
+\end{itemize}
+
+\newpage
+
+Le dernier dossier est intitulé \textbf{insidePages}, car il est constitué des différentes pages disponibles lorsque l'utilisateur est connecté.
+
+\begin{itemize}
+    
+    \item \textbf{\textit{chgMed.php}} est la page qui permet d’ajouter ou de modifier un médicament à la base.
+    
+    \item \textbf{\textit{chgPwd.php}} permet de changer de mot de passe.
+    
+    \item \textbf{\textit{chooseImage.php}} propose de choisir une image \textit{(png)} pour son médicament.
+    
+    \item \textbf{\textit{page.php}} est la page la plus utilisée du site: c’est elle qui permet de consulter les données de la base, de changer ses données personnelles et de supprimer son compte.
+    
+    \item \textbf{\textit{productList.php}} est la page qui permet de consulter la liste des médicaments sans être connecté.
+    
+\end{itemize}
+
+
+\subsubsection{Dossier racine}
+\label{sec:folder-root}
+
+Le fichier \textbf{\textit{index.php}} affiche, comme on peut s’en douter, la page d’accueil du site qui permet de se connecter et de s’inscrire au site, et d’afficher la liste des médicaments.\\
+
+La page d’erreur de connexion à la base de données, \textbf{\textit{DBerror.php}}, affiche un message d’erreur \textit{(erreur 503)} lorsqu’il y a une erreur de connexion à la base de données.
+
+\newpage
+
+
+\subsection{Connexion à la base de données}
+\label{sec:conn-bd}
+
+En ce qui concerne la connexion à la base de données, aucun \textit{design pattern} n’a été utilisé, car, lorsque cette matière a été abordée au cours, la majeure partie du projet était déjà achevée.\\
+
+Le type de requêtes utilisé pour l'accès à la base de données est le type PDO.\\
+De manière plus précise, ce sont des requêtes préparées qui ont été utilisées pour plus de sécurité \textit{(voir la section~\ref{sec:securite}\textbf{~\nameref{sec:securite}})}.\\
+De plus, PDO permet plus de flexibilité, est recommandée, très utilisée \textit{(et possède donc une importante communauté)} et est enseignée à l'école.\\
+
+On pourrait alors ajouter, dans les évolutions possibles, le passage à la \textit{programmation orientée objet}, couplée à l’utilisation du \textit{singleton} et, comme structure de site, l’utilisation du \textit{design pattern \textbf{MVC}}.
+
+\newpage
+
+
+\subsection{Sécurité}
+\label{sec:securite}
+
+Pour la sécurité du site tout accès à la base de données passe par des requêtes préparées \textit{(PDO)}, car celles-ci protègent le site de toute injection SQL.\\
+
+La connexion au site est surveillée grâce à la mise en place d’une session. Dès qu’un accès à une page se fait, la connexion est vérifiée. Si l’utilisateur n’est pas identifié, il est redirigé vers la page d’accueil.\\
+
+En plus de cela, chaque champ de formulaire est protégé par des expressions régulières \textit{(regex)}.\\
+Celles-ci vérifient que les données entrées sont de la forme voulue: un nom ne doit contenir que des lettres et, selon une certaine forme, peut être divisé à l’aide d’un trait d’union; une adresse mail ne contient que des lettres minuscules non-accentuées, des points et un seul arobase; etc.\\
+
+De plus, les mots de passe ont une longueur minimale de quatre caractères et doivent contenir, au moins, une majuscule, un minuscule et un chiffre.\\
+Ils sont aussi hachés à l’aide de \textit{SHA512} et d’un \textit{salage dynamique} pour plus de sécurité.\\
+En effet, le mot de passe est de la forme \textbf{+\%\# longueur mot\_de\_passe  ¨*§}.\\ Par exemple, le mot de passe \textbf{Test1} devient \textbf{+\%\#5Test1¨*§} avant d’être haché.\\
+Il est ainsi indéchiffrable, mais cela a aussi pour effet de sécuriser la base de données puisque le résultat ne contiendra que des caractères sûrs.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

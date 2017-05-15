@@ -1,0 +1,90 @@
+\section{Présentation du projet}
+\label{sec:presentation}
+
+
+\subsection{Introduction}
+\label{sec:intro}
+
+Dans le cadre du cours de \textbf{Programmation web}, il nous a été demandé de réaliser un site dynamique en PHP.\\
+Dans le cadre d'un site dynamique, les données disponibles sur le site proviennent d'une base de données, ici, composée de trois tables.
+
+
+\subsection{Énoncé}
+\label{sec:enonce}
+
+Le site doit comprendre une base de données composée de trois tables.\\
+
+L'une d'elles est prévue pour la gestion des utilisateurs, représentés par, au minimum, un nom, un prénom, une adresse mail et un mot de passe.\\
+L'adresse mail doit servir pour la connexion au site, et le mot de passe a une longueur minimale de 4 caractères.\\
+
+Du côté des fonctionnalités, les utilisateurs doivent pouvoir se (dé)connecter, modifier leurs données, supprimer leur compte et contacter l'administrateur.\\
+L'\textbf{administrateur}, utilisateur créé par nos soins, a accès à toutes les données de la base de données, peut ajouter et modifier du contenu, réinitialiser le mot de passe des utilisateurs et peut aussi les bannir.
+
+
+\subsection{Description}
+\label{sec:description}
+
+Ce site proposera aux visiteurs de s'inscrire afin de créer une liste privée de médicaments et ce, d’après une liste de médicaments \textit{non-exhaustive}.\\
+Cette liste sera établie par l'administrateur selon son envie et les demandes envoyées par les utilisateurs.\\
+
+Chaque médicament comprendra: sa posologie, les effets néfastes, les contre-\\indications ainsi qu'un lien vers sa notice.\\
+
+Les personnes n’ayant pas de compte auront accès à la liste des médicaments ne contenant que leur nom et leur posologie.
+
+\newpage
+
+
+\subsection{Langages}
+\label{sec:langages}
+
+Les deux langages principaux sont donc, vu l'énoncé, le \textbf{PHP} et \textbf{MySQL}.\\
+Ceux-ci sont, bien entendu, accompagnés du HTML, CSS ainsi que du JavaScript \textit{(et jQuery)} pour la création du site.
+
+\vspace{1cm}
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}[c]{0.4\textwidth}
+  \centering
+  \includegraphics[scale=0.15]
+  {textures/images/tools/php.pdf}
+\caption{Logo de PHP}\label{php}
+\end{minipage} \qquad
+\begin{minipage}[c]{0.4\textwidth}
+  \centering
+  \includegraphics[scale=0.15]
+  {textures/images/tools/mysql.pdf}
+\caption{Logo de MySQL}\label{mysql}
+\end{minipage}
+\end{figure}
+
+
+\subsection{Outils}
+\label{sec:outils}
+
+D'après le cours de bases de données du premier quadrimestre et le système d'exploitation utilisé, l'outil choisi pour le serveur web ainsi que la base de données est \textbf{MAMP}.\\
+En ce qui concerne l'éditeur de texte, c'est \textbf{Atom} qui a été retenu pour sa simplicité ainsi que pour la familiarité que je ressent envers lui.
+
+\vspace{1cm}
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}[c]{0.4\textwidth}
+  \centering
+  \includegraphics[scale=0.15]
+  {textures/images/tools/mamp.pdf}
+\caption{Logo de MAMP}\label{mamp}
+\end{minipage} \qquad
+\begin{minipage}[c]{0.4\textwidth}
+  \centering
+  \includegraphics[scale=0.15]
+  {textures/images/tools/atom.pdf}
+\caption{Logo de Atom}\label{atom}
+\end{minipage}
+\end{figure}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
